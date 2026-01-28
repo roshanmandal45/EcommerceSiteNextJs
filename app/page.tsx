@@ -1,4 +1,4 @@
-import Carosel from "@/components/Carosel";
+import { Carousel } from "@/components/Carosel";
 import { Button } from "@/components/ui/button";
 import { stripe } from "@/lib/stripe";
 import Image from "next/image";
@@ -8,13 +8,13 @@ import React from "react";
 const Home = async () => {
   const products = await stripe.products.list({
     expand: ["data.default_price"],
-    limit: 5,
+    limit: 8,
   });
 
   const firstProductImage = products.data[0]?.images[0];
 
   return (
-    <div>
+    <div className="">
       <section className="flex justify-center items-center ">
         <div className="flex justify-center items-center bg-gray-200 p-8 w-[70%] overflow-hidden">
           <div className="w-1/2">
@@ -31,6 +31,7 @@ const Home = async () => {
               src={firstProductImage}
               width={350}
               height={50}
+              className="object-cover w-[99%] h-68"
             />
           )}
           </div>
@@ -38,7 +39,7 @@ const Home = async () => {
         </div>
       </section>
       <section>
-        <Carosel/>
+        <Carousel products={products.data}/>
       </section>
     </div>
   );
