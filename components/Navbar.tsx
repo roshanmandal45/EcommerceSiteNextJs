@@ -21,7 +21,7 @@ export default function Navbar() {
       
         <div className="hidden md:flex gap-x-10">
           <Link href="/" className={navLinkClasses}>Home</Link>
-          <Link href="/products" className={navLinkClasses}>Products</Link>
+          <Link href="/dashboard/products" className={navLinkClasses}>Products</Link>
           <Link href="/checkout" className={navLinkClasses}>Checkout</Link>
         </div>
  
