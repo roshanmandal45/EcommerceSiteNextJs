@@ -9,7 +9,7 @@ const Products = async () => {
     });
   return (
     <div>
-      <h1>All Products</h1>
+      <h1 className='flex justify-center items-center p-2 text-2xl font-medium'>All Products</h1>
       <ProductList products={products.data}/>
     </div>
   )

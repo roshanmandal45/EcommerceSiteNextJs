@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="hidden md:flex gap-x-10">
           <Link href="/" className={navLinkClasses}>Home</Link>
           <Link href="/dashboard/products" className={navLinkClasses}>Products</Link>
-          <Link href="/checkout" className={navLinkClasses}>Checkout</Link>
+          <Link href="/dashboard/checkout" className={navLinkClasses}>Checkout</Link>
         </div>
  
  <div>
@@ -40,8 +40,8 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-white shadow px-4 py-3 flex flex-col gap-3">
           <Link href="/" className={navLinkClasses} onClick={() => setOpen(false)}>Home</Link>
-          <Link href="/products" className={navLinkClasses} onClick={() => setOpen(false)}>Products</Link>
-          <Link href="/checkout" className={navLinkClasses} onClick={() => setOpen(false)}>Checkout</Link>
+          <Link href="/dashboard/products" className={navLinkClasses} onClick={() => setOpen(false)}>Products</Link>
+          <Link href="/dashboard/checkout" className={navLinkClasses} onClick={() => setOpen(false)}>Checkout</Link>
         </div>
       )}
     </nav>

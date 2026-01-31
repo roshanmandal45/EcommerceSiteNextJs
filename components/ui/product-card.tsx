@@ -3,11 +3,13 @@ import React from 'react'
 import Stripe from 'stripe';
 import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import Image from 'next/image';
+import { Button } from './button';
  interface Props {
     product: Stripe.Product;
+    price:Stripe.Price;
 }
 
-export const ProductCard = ({product} : Props) =>  {
+export const ProductCard = ({product,price} : Props) =>  {
   return (
     
    
@@ -22,15 +24,15 @@ export const ProductCard = ({product} : Props) =>  {
             sizes="100vw"
             style={{ objectFit: "cover" }}
           />
-         
         </div>
       )}
-      <CardHeader>{product.name}</CardHeader>
-      <CardContent>{product.description}</CardContent>
-      {/* <CardContent> 
+      <CardHeader className=''>{product.name}</CardHeader>
+      <CardContent className='mt-[-12]'>{product.description}</CardContent>
+      <CardContent className='mt-[-12]'> 
             {price && price.unit_amount && (
               <p className="text-xl font-bold">${(price.unit_amount / 100).toFixed(2)}</p>
-            )}</CardContent> */}
+            )}</CardContent>
+           <Button className='text-white active:scale-95'>View More</Button>
    </Card>
      
      </Link>
